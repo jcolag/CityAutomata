@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityAutomata", "CityAutomata\CityAutomata.csproj", "{91A59BCE-8F98-4E3B-90D5-2D9892971812}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCity", "TestCity\TestCity.csproj", "{C5A70E26-B3E1-4523-8E14-373F471F7C37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{91A59BCE-8F98-4E3B-90D5-2D9892971812}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91A59BCE-8F98-4E3B-90D5-2D9892971812}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91A59BCE-8F98-4E3B-90D5-2D9892971812}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5A70E26-B3E1-4523-8E14-373F471F7C37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5A70E26-B3E1-4523-8E14-373F471F7C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5A70E26-B3E1-4523-8E14-373F471F7C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5A70E26-B3E1-4523-8E14-373F471F7C37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = CityAutomata\CityAutomata.csproj
