@@ -9,7 +9,12 @@
                 {
                         var city = new City(10, 10);
 
-                        city.ScanAll();
+                        for (int i = 0; i < 10000; i++)
+                        {
+                                city.ScanAll();
+                        }
+
+                        city.Chart();
                 }
         }
 }
