@@ -16,9 +16,10 @@
 
                 private int collected = 0;
 
-                public Block(int capacity)
+                public Block(int capacity, int start)
                 {
                         this.capacity = capacity;
+                        this.population = start <= capacity ? start : this.capacity;
                 }
 
                 public int Population
@@ -42,14 +43,6 @@
                         }
                 }
 
-                public int Cost
-                {
-                        get
-                        {
-                                return cost;
-                        }
-                }
-
                 public int MoveIn(int number)
                 {
                         int diff = 0;
@@ -66,7 +59,7 @@
 
                 public void TakeTurn()
                 {
-                        this.collected += this.Cost / this.capacity / 10 * this.population;
+                        this.collected += Math.Max(this.cost / this.capacity / 10 * this.population, 1);
                         if (this.collected > this.cost)
                         {
                                 this.level += 1;
@@ -84,9 +77,9 @@
                                 throw new ArgumentException("Blocks can only be compared to Blocks");
                         }
                         var b = (Block)obj;
-                        double thisval = this.value - this.cost;
-                        double thatval = b.Value - b.Cost;
-                        return thisval.CompareTo(thatval);
+                        double thisval = this.value / this.cost;
+                        double thatval = b.Value / b.cost;
+                        return thatval.CompareTo(thisval);
                 }
 
                 #endregion

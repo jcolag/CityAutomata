@@ -16,7 +16,7 @@
                         {
                                 for (int j = 0; j < grid.GetLength(1); j++)
                                 {
-                                        grid[i, j] = new Block(5);
+                                        grid[i, j] = new Block(50, 50);
                                 }
                         }
                 }
@@ -24,7 +24,7 @@
                 public void ScanAll()
                 {
                         var ordering = new List<Block>();
-                        int immigrants = this.population == 0 ? 100 : this.population / 10;
+                        int immigrants = this.population == 0 ? 100 : this.population / 100;
                         int start = immigrants;
 
                         for (int i = 0; i < grid.GetLength(0); i++)
@@ -73,6 +73,21 @@
                         Console.WriteLine();
                 }
 
+                public void ChartValue()
+                {
+                        for (int i = 0; i < grid.GetLength(0); i++)
+                        {
+                                for (int j = 0; j < grid.GetLength(1); j++)
+                                {
+                                        Console.Write(Math.Truncate(grid[i, j].Value).ToString() + "\t");
+                                }
+
+                                Console.WriteLine();
+                        }
+
+                        Console.WriteLine();
+                }
+
                 private double CalculateValue(int x, int y)
                 {
                         double total = 0.0;
@@ -88,7 +103,7 @@
                                         int xdist = x - i;
                                         int ydist = y - j;
                                         double dist = Math.Sqrt((double)(xdist * xdist + ydist * ydist));
-                                        total += (float)grid[i, j].Population / dist;
+                                        total += (float)grid[i, j].Population / (dist * dist);
                                 }
                         }
 
